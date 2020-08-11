@@ -6,9 +6,9 @@ After=network.target
 [Service]
 User=discord
 Group=www-data
-WorkingDirectory=/home/discord/brawlClubRegulator
-Environment="PATH=/home/discord/brawlClubRegulator"
-ExecStart=/usr/bin/python3 brawlClubAutomator.py
+WorkingDirectory=/home/discord/NotesCreatorBot
+Environment="PATH=/home/discord/NotesCreatorBot"
+ExecStart=/usr/bin/python3 NotesCreatorBot.py
 
 [Install]
 WantedBy=multi-user.target
