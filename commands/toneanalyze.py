@@ -52,7 +52,6 @@ class ToneAnalyze(BaseCommand):
             return
 
         tones = []
-        import pdb;pdb.set_trace()
         for element in list_tone:
             element = element.replace('\n', '')
             if element and 'Return to Home Page' not in element:
