@@ -9,4 +9,4 @@ pytz
 six
 tzlocal
 websockets
-
+bs4
