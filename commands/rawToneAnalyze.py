@@ -4,7 +4,7 @@ import bs4
 import requests
 
 
-class ToneAnalyze(BaseCommand):
+class RawToneAnalyze(BaseCommand):
 
     def __init__(self):
         # A quick description for the help message
