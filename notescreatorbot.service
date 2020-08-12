@@ -8,7 +8,7 @@ User=discord
 Group=www-data
 WorkingDirectory=/home/discord/NotesCreatorBot
 Environment="PATH=/home/discord/NotesCreatorBot"
-ExecStart=/usr/bin/python3 NotesCreatorBot.py
+ExecStart=/usr/bin/python3.7 NotesCreatorBot.py
 
 [Install]
 WantedBy=multi-user.target
