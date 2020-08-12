@@ -37,11 +37,6 @@ class ToneAnalyze(BaseCommand):
         # parameters as specified in __init__
         # 'message' is the discord.py Message object for the command to handle
         # 'client' is the bot Client object
-        message_author = str(message.author)
-
-        # Get member object
-        activeServers = list(client.guilds)[0]
-        member_object = activeServers.get_member_named(message_author)
 
         try:
             self.data['text_toning'] = (" ".join(params)).replace('"', '').replace("'", "")
@@ -57,15 +52,13 @@ class ToneAnalyze(BaseCommand):
             if element and 'Return to Home Page' not in element:
                 tones.append(element)
 
-        embed_message = Embed(title=f'Summary of The Text', color=0xff0000)
-        embed_message.set_footer(text=message_author, icon_url=member_object.avatar_url)
+        embed_message = ""
 
         for individual_tone in tones:
-            embed_message.add_field(name="\u200b", value=individual_tone, inline=False)
+            embed_message += individual_tone + "\n"
         try:
-            await message.channel.send(embed=embed_message)
+            await message.channel.send(embed_message)
             return
         except Exception:
-            await message.channel.send(message.author.mention + " The Text is too large!!!"
-                                                                "Try using rawToneAnalyze instead.")
+            await message.channel.send(message.author.mention + " The Text is too large!!!")
             return

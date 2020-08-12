@@ -11,3 +11,4 @@ tzlocal
 websockets
 bs4
 lxml
+requests

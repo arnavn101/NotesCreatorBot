@@ -1,8 +1,7 @@
 from commands.base_command import BaseCommand
-from discord import Embed, Message
+from discord import Embed
 import bs4
 import requests
-import time
 
 class Summarize(BaseCommand):
 
@@ -67,5 +66,8 @@ class Summarize(BaseCommand):
             embed_message.add_field(name="\u200b", value=individual_summary, inline=False)
         try:
             await message.channel.send(embed=embed_message)
+            return
         except Exception:
-            await message.channel.send(message.author.mention + " The Bullet Points Parameter is too large!!!")
+            await message.channel.send(message.author.mention + " The Bullet Points Parameter is too large!!!"
+                                                                " Try using rawSummarize instead.")
+            return
