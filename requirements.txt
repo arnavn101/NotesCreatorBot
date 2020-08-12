@@ -10,3 +10,4 @@ six
 tzlocal
 websockets
 bs4
+lxml
